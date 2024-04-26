@@ -15,10 +15,6 @@ Shine::init(
     locale  : $this->locale,
     path    : dirname(path: __DIR__) . '/',
 );
-
-$f = Shine::rawData(key: 'framework_name') . ' version ' . Shine::rawData(key: 'framework_version');
-$c = Shine::rawData(key: 'core_name') . ' version ' . Shine::rawData(key: 'core_version');
-
 Shine::setSection(name: 'main.title', content: 'Welcome to Shiny-Tiny Framework');
 Shine::captureSection();
 ?>
@@ -41,14 +37,16 @@ Shine::captureSection();
             <h2>About</h2>
             <p><a href="<?php
                 Shine::echoData(key: 'framework_url'); ?>"><?php
-                    Shine::echo(value: $f); ?></a></p>
+                    Shine::echoData(key: 'framework_name'); ?></a></p>
             <p><a href="<?php
                 Shine::echoData(key: 'core_url'); ?>"><?php
-                    Shine::echo(value: $c); ?></a></p>
+                    Shine::echoData(key: 'core_name'); ?></a></p>
         </div>
     </div>
 <?php
+
 // This stuff is needed by previous sections
+
 Shine::setCapturedSection(name: 'main.content');
 Shine::extendSection(name: 'main.css', content: Shine::minifyCssFile(filename: 'welcome/welcome.css'));
 Shine::extend(view: 'main.shine.php');

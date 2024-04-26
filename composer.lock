@@ -361,12 +361,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UncleSven/shiny-tiny-core.git",
-                "reference": "8fa7f0f2948732998be196223e549a6e76cbc846"
+                "reference": "bcf028d86455c32b75fb12adef53a1bc1dc8c187"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UncleSven/shiny-tiny-core/zipball/8fa7f0f2948732998be196223e549a6e76cbc846",
-                "reference": "8fa7f0f2948732998be196223e549a6e76cbc846",
+                "url": "https://api.github.com/repos/UncleSven/shiny-tiny-core/zipball/bcf028d86455c32b75fb12adef53a1bc1dc8c187",
+                "reference": "bcf028d86455c32b75fb12adef53a1bc1dc8c187",
                 "shasum": ""
             },
             "require": {
@@ -419,7 +419,7 @@
             "support": {
                 "source": "https://github.com/UncleSven/shiny-tiny-core/tree/main"
             },
-            "time": "2024-04-25T18:33:12+00:00"
+            "time": "2024-04-26T14:25:02+00:00"
         }
     ],
     "packages-dev": [

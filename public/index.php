@@ -3,10 +3,13 @@
 declare(strict_types = 1);
 
 try {
-    require __DIR__ . '/../vendor/autoload.php';
+    $dir = dirname(path: __DIR__);
 
-    $app = require __DIR__ . '/../bootstrap/app.php';
+    require $dir . '/vendor/autoload.php';
+
+    $app = require $dir . '/bootstrap/app.php';
     $app->run();
+
 } catch (Throwable $_t) {
     header(header: 'Content-Type: text/plain', response_code: 500);
     exit('Ops, something went wrong!');

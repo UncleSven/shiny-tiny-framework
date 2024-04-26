@@ -19,18 +19,30 @@ final class WelcomeController extends Controller
 {
     public function index(Config $config, Request $request): HttpResponse
     {
+        $coreUrl  = $config->getString(key: 'shiny_tiny_core_url', default: '');
+        $coreName = sprintf(
+            '%s version %s',
+            $config->getString(key: 'shiny_tiny_core_name', default: ''),
+            $config->getString(key: 'shiny_tiny_core_version', default: ''),
+        );
+
+        $frameworkUrl  = $config->getString(key: 'shiny_tiny_framework_url', default: '');
+        $frameworkName = sprintf(
+            '%s version %s',
+            $config->getString(key: 'shiny_tiny_framework_name', default: ''),
+            $config->getString(key: 'shiny_tiny_framework_version', default: ''),
+        );
+
         /**
-         * Alternatively, you can also inject the response factory as a parameter
+         * Alternatively, you can also inject the HttpResponseFactory as a parameter
          * The response must have implemented the HttpResponse interface
          */
         return new HtmlResponse(
             data: [
-                      'core_name'         => $config->getString(key: 'shiny_tiny_core_name', default: ''),
-                      'core_url'          => $config->getString(key: 'shiny_tiny_core_url', default: ''),
-                      'core_version'      => $config->getString(key: 'shiny_tiny_core_version', default: ''),
-                      'framework_name'    => $config->getString(key: 'shiny_tiny_framework_name', default: ''),
-                      'framework_url'     => $config->getString(key: 'shiny_tiny_framework_url', default: ''),
-                      'framework_version' => $config->getString(key: 'shiny_tiny_framework_version', default: ''),
+                      'core_name'      => $coreName,
+                      'core_url'       => $coreUrl,
+                      'framework_name' => $frameworkName,
+                      'framework_url'  => $frameworkUrl,
                   ],
             view: $this->resources . '/welcome/welcome.shine.php',
         );
